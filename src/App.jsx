@@ -104,7 +104,7 @@ function App() {
     <main className='maze-game-main'>
       {curr[0] == game.end[0] && curr[1] == game.end[1] && <div>Reached Destination </div>}
       <div>
-        <h1>No Right Turn Puzzle</h1>
+        <h1>No Right Turn Maze</h1>
         <h2>Press W to move forward,
         Press A to move left</h2>
       </div>
