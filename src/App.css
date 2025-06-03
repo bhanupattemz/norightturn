@@ -1,0 +1,22 @@
+.maze-game-main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.maze-grid-container {
+  display: grid;
+  /* gap: 10px; */
+  border: 5px solid black;
+}
+.maze-grid-cell{
+  /* border: 2px solid black; */
+  display: flex;
+}
+.maze-text{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
