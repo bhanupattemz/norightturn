@@ -1,0 +1,91 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.maze-game-main.maze-home-page-main {
+  margin: 15vh auto;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-out;
+  overflow: hidden;
+}
+
+.maze-home-page-main img {
+  width: 150px;
+  max-width: 50%;
+  margin: 20px;
+  animation: pulse 2s infinite ease-in-out;
+}
+.maze-home-page-main div{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+}
+
+.maze-home-page-conatiner {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: slideUp 0.6s ease-out 0.3s both;
+}
+
+.maze-home-page-conatiner button {
+  border: 3px solid black;
+  border-radius: 7px;
+  padding: 10px 15px;
+  background-color: #44607e;
+  color: rgb(233, 233, 233);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.maze-home-page-conatiner button:hover {
+  background-color: #6c8db0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+  .maze-home-page-main {
+    margin: 10vh auto;
+    width: 95%;
+  }
+  
+  .maze-home-page-conatiner {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .maze-home-page-conatiner button {
+    width: 100%;
+    padding: 12px;
+  }
+}

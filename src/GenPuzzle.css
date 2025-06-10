@@ -1,0 +1,72 @@
+.maze-generation-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.maze-solutions-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loading-conatiner {
+    position: absolute;
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(240, 248, 255, 0.375);
+    cursor: progress;
+    top: 0;
+    left: 0;
+}
+
+.gen-maze-form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    text-align: center;
+}
+
+.gen-maze-form-conatiner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gen-maze-form button,
+.maze-generation-container button {
+    border: 3px solid black;
+    border-radius: 7px;
+    padding: 8px 12px;
+    background-color: #44607e;
+    color: rgb(233, 233, 233);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+}
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.gen-maze-form button:hover,
+.maze-generation-container button:hover {
+    background-color: #6c8db0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

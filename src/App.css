@@ -1,23 +1,217 @@
+body {
+  background-color: #ECEFCA;
+  color: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+}
+
 .maze-game-main {
+  overflow: auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #94B4C1;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .maze-grid-container {
   display: grid;
-  /* gap: 10px; */
   border: 5px solid black;
+  margin: 20px auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
-.maze-grid-cell{
-  /* border: 2px solid black; */
+
+.maze-grid-cell {
+  position: relative;
   display: flex;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-.maze-text{
+
+.maze-grid-cell:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
+
+.maze-text {
+  position: absolute;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-weight: bold;
+}
+
+.maze-pop-up-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: popUpFadeIn 0.3s ease-out;
+}
+
+@keyframes popUpFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.maze-pop-up-body {
+  width: 90%;
+  max-width: 500px;
+  background-color: #578692;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.maze-pop-up-cancel {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  color: red;
+  cursor: pointer;
+  font-size: 24px;
+  transition: transform 0.2s ease;
+}
+
+
+.maze-loading-div {
+  padding: 40px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.maze-movement-btns,
+.maze-feature-btns {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.maze-feature-btns button,
+.maze-movement-btns button {
+  border: 3px solid black;
+  border-radius: 7px;
+  padding: 8px 12px;
+  background-color: #315173;
+  color: rgb(233, 233, 233);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.maze-feature-btns button:hover,
+.maze-movement-btns button:hover {
+  background-color: #213448;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.maze-feature-btns button:active,
+.maze-movement-btns button:active {
+  transform: translateY(1px);
+}
+
+.maze-movement-btns svg {
+  transform: translateY(2px);
+  transition: transform 0.2s ease;
+}
+
+.maze-movement-btns button:hover svg {
+  transform: translateY(2px) scale(1.1);
+}
+
+.maze-success-msg{
+  color: green;
+  font-size: larger;
+  font-weight: 700;
+}
+.gen_maze-btns{
+  display: flex;
+  gap: 10px;
+}
+.gen-maze-cell{
+  cursor: pointer;
+}
+.gen-maze-cell:hover{
+  background-color: #a3a7ff !important;
+  transition: all ease-out 0.3s;
+}
+@media (max-width: 600px) {
+  .maze-game-main {
+    width: 95%;
+    padding: 10px;
+  }
+  
+  .maze-pop-up-body {
+    width: 95%;
+    padding: 15px;
+  }
+  
+  .maze-feature-btns button,
+  .maze-movement-btns button {
+    padding: 6px 8px;
+    min-width: 100px;
+    font-size: 14px;
+  }
+  
+  h2 {
+    font-size: 16px;
+  }
+  .maze-text{
+    font-size: x-small;
+  }
+}
+
+@media (max-width: 400px) {
+  .maze-feature-btns,
+  .maze-movement-btns {
+    gap: 5px;
+  }
+  
+  .maze-feature-btns button,
+  .maze-movement-btns button {
+    min-width: 80px;
+    font-size: 12px;
+    padding: 5px;
+  }
 }

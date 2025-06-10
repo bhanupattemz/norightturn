@@ -1,0 +1,48 @@
+h1 {
+    color: white;
+    font-size: 24px;
+}
+
+.maze-Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 96%;
+    padding: 10px 2%;
+    background-color: #547792;
+}
+
+.maze-Header>div {
+    display: flex;
+    gap: 10px;
+}
+
+.maze-Header button {
+    border: 3px solid black;
+    border-radius: 7px;
+    padding: 8px 12px;
+    background-color: #315173;
+    color: rgb(233, 233, 233);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.maze-Header button:hover {
+    background-color: #3f6083;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 600px) {
+    .maze-Header{
+       flex-direction: column;
+    }
+    .maze-Header button{
+        padding: 5px 7px;
+        min-width: 80px;
+    }
+}
