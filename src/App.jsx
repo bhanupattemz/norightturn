@@ -6,8 +6,7 @@ import MutiSolution from "./MutiSolution"
 import Home from "./Home"
 import Ownmaze from "./OwnMaze"
 import Headers from "./Header"
-// import SingleSolution from "./SingleSolution"
-// import Problem from "./Problems"
+import Nothing from "./duplicate"
 export default function App() {
   return (
     <Fragment>
@@ -18,7 +17,7 @@ export default function App() {
           <Route path="/maze/own" element={<Ownmaze />} />
           <Route path="/maze/:level" element={<Game />} />
           <Route path="/gen_maze" element={<MutiSolution />} />
-          {/* <Route path="/problem" element={< Problem />} /> */}
+          {/* <Route path="/nothing" element={<Nothing />} /> */}
         </Routes>
       </Router>
     </Fragment>
